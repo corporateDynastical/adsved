@@ -1,5 +1,8 @@
-// components/PrivacyPolicy.jsx
-export default function PrivacyPolicy() {
+"use client";
+
+import React from "react";
+
+const PrivacyPolicy: React.FC = () => {
   return (
     <section className="py-10 px-4 max-w-5xl mx-auto text-gray-800">
       <h1 className="text-3xl font-bold mb-6 text-center">Privacy Policy</h1>
@@ -79,11 +82,26 @@ export default function PrivacyPolicy() {
         <h2 className="text-xl font-semibold mb-2">Contact Information</h2>
         <p>For privacy-related concerns, contact us at:</p>
         <ul className="list-disc ml-6 mt-2 space-y-1">
-          <li>Email: <a href="mailto:contact@vedbramha.com" className="text-blue-600">contact@vedbramha.com</a>, <a href="mailto:info@vedbramha.com" className="text-blue-600">info@vedbramha.com</a></li>
-          <li>Phone: <a href="tel:+918087401984" className="text-blue-600">+91-8087401984</a></li>
+          <li>
+            Email:{" "}
+            <a href="mailto:contact@vedbramha.com" className="text-blue-600">
+              contact@vedbramha.com
+            </a>
+            ,{" "}
+            <a href="mailto:info@vedbramha.com" className="text-blue-600">
+              info@vedbramha.com
+            </a>
+          </li>
+          <li>
+            Phone:{" "}
+            <a href="tel:+918087401984" className="text-blue-600">
+              +91-8087401984
+            </a>
+          </li>
           <li>
             Address:<br />
-            Prabhat Road, Lane No. 2, Ranade Bungalow, Ground Floor, Opp. PYC Deccan Ground, Pune 411004<br />
+            Prabhat Road, Lane No. 2, Ranade Bungalow, Ground Floor, Opp. PYC Deccan Ground, Pune 411004
+            <br />
             17/130, Anand Nagar, Nehru Road, Near Vakola Police Station, Santacruz East – 400055
           </li>
         </ul>
@@ -92,9 +110,14 @@ export default function PrivacyPolicy() {
       {/* Policy Updates */}
       <div>
         <h2 className="text-xl font-semibold mb-2">Policy Updates</h2>
-        <p>We reserve the right to modify this privacy policy at any time. Changes will be effective immediately upon posting to the website.</p>
+        <p>
+          We reserve the right to modify this privacy policy at any time. Changes will be effective
+          immediately upon posting to the website.
+        </p>
         <p className="mt-2 text-sm text-gray-500">Last Updated: May 2025</p>
       </div>
     </section>
   );
-}
+};
+
+export default PrivacyPolicy;
