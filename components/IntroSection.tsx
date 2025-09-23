@@ -6,7 +6,7 @@ export default function IntroSection() {
       <div className="max-w-6xl mx-auto text-center">
         {/* Intro Text */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-          Namaste. I am Aradhye Gurujiiiiii.
+          Namaste. I am Aradhye Guruji.
         </h2>
         <p className="text-lg md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
           Your trusted guide in Vastu and Vedic Astrology.
