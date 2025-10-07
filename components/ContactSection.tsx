@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import emailjs from "emailjs-com";
 import { useRouter } from "next/navigation";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
@@ -9,28 +8,31 @@ export default function ContactSection() {
   const form = useRef<HTMLFormElement>(null);
   const router = useRouter();
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendToWhatsApp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!form.current) return;
 
-    emailjs
-      .sendForm(
-        "service_40b20ow",
-        "template_kpu3m9o",
-        form.current,
-        "_bKWFFib_B96pgH5g"
-      )
-      .then(
-        () => {
-          form.current?.reset();
-          router.push("/thank-you");
-        },
-        () => {
-          alert("Failed to send message. Please try again.");
-        }
-      );
-  };
+    const formData = new FormData(form.current);
+    const name = formData.get("user_name") as string;
+    const mobile = formData.get("user_mobile") as string;
+    const service = formData.get("user_service") as string;
+    const message = formData.get("message") as string;
+
+    // Replace with your WhatsApp number (without + or spaces)
+    const whatsappNumber = "919763714046";
+
+    // Create message
+   const whatsappMessage = encodeURIComponent(
+  `Name: ${name}\nMobile: ${mobile}\nService: ${service}${message ? `\nMessage: ${message}` : ""}`
+);
+
+const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+window.open(whatsappURL, "_blank");
+
+form.current.reset();
+
+  }
 
   return (
     <section className="py-16 px-4 sm:px-8 lg:px-24 bg-gradient-to-r from-white to-blue-50">
@@ -39,7 +41,7 @@ export default function ContactSection() {
         {/* Contact Form - Show First on Mobile */}
         <form
           ref={form}
-          onSubmit={sendEmail}
+          onSubmit={sendToWhatsApp}
           className="order-1 lg:order-none w-full bg-white p-6 sm:p-8 rounded-2xl shadow-lg space-y-6"
         >
           <h3 className="text-2xl font-bold text-gray-700 mb-2">Send Us a Message</h3>
@@ -105,7 +107,7 @@ export default function ContactSection() {
             type="submit"
             className="w-full bg-rose-950 text-white py-3 font-semibold rounded-lg hover:bg-rose-900 transition"
           >
-            Send Message
+            Send on WhatsApp
           </button>
         </form>
 
@@ -142,4 +144,4 @@ export default function ContactSection() {
       </div>
     </section>
   );
-}
+  }
