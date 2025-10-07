@@ -20,7 +20,7 @@ export default function ContactSection() {
     const message = formData.get("message") as string;
 
     // Replace with your WhatsApp number (without + or spaces)
-    const whatsappNumber = "919763714046";
+    const whatsappNumber = "918087401984";
 
     // Create message
    const whatsappMessage = encodeURIComponent(
