@@ -107,7 +107,7 @@ form.current.reset();
             type="submit"
             className="w-full bg-rose-950 text-white py-3 font-semibold rounded-lg hover:bg-rose-900 transition"
           >
-            Send on WhatsApp
+            Send Message
           </button>
         </form>
 
