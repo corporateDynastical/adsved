@@ -121,7 +121,7 @@ form.current.reset();
           <div className="space-y-4 text-gray-700 text-base">
             <p id="call">
   <strong>📞 Phone:</strong> 
-  <a href="tel:+918087401984">+91-8087401984</a>
+  <a href="tel:+918087401984">+91-8087401984000</a>
 </p>
             <p><strong>✉️ Email:</strong> contact@vedbramha.com</p>
             <p><strong>✉️ Email:</strong> info@vedbramha.com</p>
